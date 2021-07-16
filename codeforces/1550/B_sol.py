@@ -29,12 +29,28 @@ def testcase(t):
         solve()
 
 def solve():
-    pass
+    n,a,b = line()
+    s = inp().strip()
+    if b >= 0: 
+        print(n * (a+b))
+        return
+    swaps = 0
+    c = s[0]
+    for char in s[1:]:
+        if char != c:
+            swaps +=1
+            c = char
+    
+    if swaps %2 == 0: 
+        x = (swaps//2) +1
+        print(x* b + n*a)
+    else:
+        x = (swaps//2) + 2
+        print(x* b + n*a)
 
 
 def main():
-    solve()
-    # testcase(number())
+    testcase(number())
 
 if __name__ == "__main__":
     main()
